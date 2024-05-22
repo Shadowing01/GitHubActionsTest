@@ -12,6 +12,9 @@ jobs:
         name: Build Image
         runs-on: ubuntu-latest
         steps:
+            - name: Set up QEMU
+              uses: docker/setup-qemu-action@v3
+
             - name: Set up Docker Buildx
               uses: docker/setup-buildx-action@v2
 
@@ -28,5 +31,4 @@ jobs:
                 tags: richardbos/githubactionstest:latest,richardbos/githubactionstest:01
                 cache-from: type=gha
                 cache-to: type=gha,mode=max
-
-                #test cache?
+                platforms: linux/amd64,linux/arm64,linux/arm/v7
