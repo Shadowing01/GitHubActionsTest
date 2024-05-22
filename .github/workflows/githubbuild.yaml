@@ -28,3 +28,5 @@ jobs:
                 tags: richardbos/githubactionstest:latest,richardbos/githubactionstest:01
                 cache-from: type=gha
                 cache-to: type=gha,mode=max
+
+                #test cache?
