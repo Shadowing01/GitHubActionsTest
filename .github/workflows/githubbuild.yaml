@@ -48,7 +48,7 @@ jobs:
           exit-code: 0
           format: table
 
-          
+
       # Build metadata
       - name: Docker meta
         id: docker_meta
@@ -69,6 +69,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
+          target: final
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
           cache-from: type=gha
