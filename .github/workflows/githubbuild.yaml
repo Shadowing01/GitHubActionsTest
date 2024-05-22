@@ -48,7 +48,7 @@ jobs:
       # for simple tests (npm test, etc.) just run a local image in docker
       - name: Unit Testing in Docker
         run: |
-          docker run --rm -d --name mycontainer ${{ github.run_id }} /httpenv && docker exec mycontainer curl --fail localhost:8888 || exit 1
+          docker run --rm -d --name mycontainer ${{ github.run_id }} ping 8.8.8.8 && docker exec mycontainer curl --fail localhost:8888 || exit 1
         #docker run --rm ${{ github.run_id }} curl --fail http://localhost:8888 || exit 1
 
       # Run Trivy against Docker Engine build
