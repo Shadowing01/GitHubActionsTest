@@ -13,6 +13,7 @@ FROM base as test
 
 #layer test tools and assets on top as optional test stage
 RUN apk add --no-cache apache2-utils
+RUN apk add curl
 
 #########################
 FROM base as final
